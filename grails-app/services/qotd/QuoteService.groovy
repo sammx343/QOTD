@@ -21,6 +21,5 @@ class QuoteService {
     		randomQuote = getStaticQuote();
     	}
     	return randomQuote
-		[ quote: randomQuote, sizeT: allQuotes.size()]
     }
 }
