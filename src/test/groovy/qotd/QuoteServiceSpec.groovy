@@ -4,15 +4,16 @@ import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
 class QuoteServiceSpec extends Specification implements ServiceUnitTest<QuoteService>{
+  def quoteService
+    
+    void "static quote service always returns quiche quote" (){
 
-    def setup() {
+      when:
+        Quote staticQuote = quoteService.getStaticQuote()
+
+      then:
+        staticQuote.author == "Anonymous"
+        staticQuote.content == "Real Programmers Don't eat much quicheQuiche"
     }
 
-    def cleanup() {
-    }
-
-    void "test something"() {
-        expect:"fix me"
-            true == false
-    }
 }
